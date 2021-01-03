@@ -1,18 +1,9 @@
 package Functions.Sound;
 
-
-    /*public Functions.Sound getType(String type) {
-        if(type.equals("guitar"))
-        return new Guitar("description");
-        if(type.equals("drums"))
-        return new Drums("description");
-        else
-        return null;
-    }*/
-
 abstract public class Sound {
 
     abstract Sound showInfo();
+    abstract void updateInfo(String notes);
 }
 
 class Guitar extends Sound {
@@ -55,4 +46,20 @@ class Drums extends Sound {
     void updateInfo(String notes) {
         this.notes = notes;
     }
+
+    public Sound getType(String type) {
+        if(type.equals("guitar"))
+            return new Guitar("description");
+        if(type.equals("drums"))
+            return new Drums("description");
+        else
+        return null;
+    }
+
+    /*void UpdateSoundInfo() {
+        Sound sound = getType("drum");
+        sound.updateInfo("drum");
+    }*/
 }
+
+
