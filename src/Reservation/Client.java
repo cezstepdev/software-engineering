@@ -1,5 +1,8 @@
 package Reservation;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Client {
     private static int id = 0;
     private int idClient;
@@ -12,19 +15,40 @@ public class Client {
         idClient = id;
     }
 
-    public void viewSpectacleTimetable(){
-        System.out.println("seanse: ");
+    public String getName() {
+        return name;
     }
 
-    public void addToFavourites(){
-        System.out.println("dodałes seans do ulubionych");
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void buyTicket(){
-        System.out.println("zakupiłes bilet na seans");
+    public String getEmail() {
+        return email;
     }
 
-    public void makeReservation() {
-        System.out.println("zarezerwowałes bilet na seans");
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public void viewSpectacleTimetable() {
+        String timeTable = Spectacle.viewSpectacleTimeTable();
+    }
+
+    public void addToFavourites(int idSpectacle) {
+        List<Spectacle> favourites = new ArrayList<Spectacle>();
+        favourites.add(new Spectacle(idSpectacle));
+    }
+
+    public void buyTicket() {
+        Payment payment = new Payment(idClient);
     }
 }

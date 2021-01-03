@@ -1,20 +1,24 @@
 package Functions;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-
 public class Wardrobe {
+    String shirts;
+    String shoes;
+    String pants;
 
-    private Map<Integer, String> element = new HashMap<>();
+    public Wardrobe(String shirts, String shoes, String pants) {
+        this.shirts = shirts;
+        this.shoes = shoes;
+        this.pants = pants;
+    }
 
-    public void showAllWardrobe() {
-        Set<Map.Entry<Integer,String>> entrySet = element.entrySet();
+    public Wardrobe getInfo() {
+        return this;
+    }
 
-        for(Map.Entry<Integer, String> entry: entrySet) {
-            System.out.println(entry.getKey() + " : " + entry.getValue());
-        }
+    public void updateInfo(String shirts, String shoes, String pants) {
+        this.shirts = shirts;
+        this.shoes = shoes;
+        this.pants = pants;
     }
 }
 

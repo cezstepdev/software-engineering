@@ -1,12 +1,9 @@
 package Reservation;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Scanner;
 
 public class Ticket {
-    private static int id;
+    private static int id = 0;
     private int idTicket;
     private String clientName;
     private String clientSurname;
@@ -21,7 +18,63 @@ public class Ticket {
         idTicket = id;
     }
 
-    public void updateInfoTicket(){
+    public String getClientName() {
+        return clientName;
+    }
+
+    public void setClientName(String clientName) {
+        this.clientName = clientName;
+    }
+
+    public String getClientSurname() {
+        return clientSurname;
+    }
+
+    public void setClientSurname(String clientSurname) {
+        this.clientSurname = clientSurname;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public int getIdClient() {
+        return idClient;
+    }
+
+    public void setIdClient(int idClient) {
+        this.idClient = idClient;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public String getHall() {
+        return hall;
+    }
+
+    public void setHall(String hall) {
+        this.hall = hall;
+    }
+
+    public int getPlace() {
+        return place;
+    }
+
+    public void setPlace(int place) {
+        this.place = place;
+    }
+
+    /*public void updateInfoTicket(){
 
         Scanner scan = new Scanner(System.in);
 
@@ -52,5 +105,5 @@ public class Ticket {
 
         System.out.println("Update place: ");
         place = scan.nextInt();
-    }
+    }*/
 }
