@@ -1,5 +1,10 @@
 package Reservation;
 
+import Spectacle.Spectacle;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Client {
     private static int id = 0;
     private int idClient;
@@ -37,7 +42,8 @@ public class Client {
     }
 
     public void viewSpectacleTimetable() {
-        String timeTable = Spectacle.viewSpectacleTimeTable();
+        Spectacle spectacle = new Spectacle(1,"MATRIX", "", "2021-01-01");
+        String timeTable = spectacle.viewSpectacleTimeTable();
     }
 
     public void addToFavourites(int idSpectacle) {
