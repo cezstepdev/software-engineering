@@ -10,7 +10,6 @@ package Functions.Props;
         else
         return null;
     }*/
-
 abstract public class Props {
     abstract Props showInfo();
     abstract void updateInfo(String description);
@@ -68,7 +67,7 @@ class Wood extends Props {
             return null;
     }
 
-    public void updateProps(String type) {
-        getType(type).updateInfo("in the background");
+    public void updateProps(String type, String description) {
+        getType(type).updateInfo(description);
     }
 }

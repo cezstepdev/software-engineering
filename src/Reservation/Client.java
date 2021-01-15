@@ -41,8 +41,8 @@ public class Client {
         this.phone = phone;
     }
 
-    public void viewSpectacleTimetable() {
-        Spectacle spectacle = new Spectacle(1,"MATRIX", "", "2021-01-01");
+    public void viewSpectacleTimetable(int idSpectacle, String titleSpectacle, String timetableSpectacle, String dateSpectacle) {
+        Spectacle spectacle = new Spectacle(idSpectacle,titleSpectacle, timetableSpectacle, dateSpectacle);
         String timeTable = spectacle.viewSpectacleTimeTable();
     }
 

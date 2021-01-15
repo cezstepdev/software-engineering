@@ -55,11 +55,6 @@ class Drums extends Sound {
         else
         return null;
     }
-
-    /*void UpdateSoundInfo() {
-        Sound sound = getType("drum");
-        sound.updateInfo("drum");
-    }*/
 }
 
 
