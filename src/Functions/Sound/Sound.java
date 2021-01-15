@@ -1,24 +1,48 @@
 package Functions.Sound;
 
-abstract public class Sound {
+public class Sound {
 
-    abstract Sound showInfo();
+    public AbstractSound getType(String type) {
+        if(type.equals("guitar"))
+            return new Guitar();
+        if(type.equals("drums"))
+            return new Drums();
+        else
+            return null;
+    }
+}
+
+abstract class AbstractSound {
+    abstract AbstractSound showInfo();
     abstract void updateInfo(String notes);
 }
 
-class Guitar extends Sound {
+class Guitar extends AbstractSound {
 
     private static int id = 0;
     private int idSound;
     String notes;
 
-    public Guitar(String notes) {
-        id++;
-        idSound = id;
-        this.notes = notes;
+    public static int getId() {
+        return id;
     }
 
-    public Sound showInfo() {
+    String type;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public Guitar() {
+        id++;
+        idSound = id;
+    }
+
+    public AbstractSound showInfo() {
         return this;
     }
 
@@ -27,33 +51,27 @@ class Guitar extends Sound {
     }
 }
 
-class Drums extends Sound {
+class Drums extends AbstractSound {
 
     private static int id = 0;
     private int idSound;
     String notes;
 
-    public Drums(String notes) {
-        id++;
-        idSound = id;
-        this.notes = notes;
+    public static int getId() {
+        return id;
     }
 
-    public Sound showInfo() {
+    public Drums() {
+        id++;
+        idSound = id;
+    }
+
+    public AbstractSound showInfo() {
         return this;
     }
 
     void updateInfo(String notes) {
         this.notes = notes;
-    }
-
-    public Sound getType(String type) {
-        if(type.equals("guitar"))
-            return new Guitar("description");
-        if(type.equals("drums"))
-            return new Drums("description");
-        else
-        return null;
     }
 }
 

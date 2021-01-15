@@ -3,35 +3,26 @@ package Reservation;
 import java.util.Date;
 
 public class Ticket {
-    private static int id = 0;
+    static private int id = 0;
     private int idTicket;
-    private String clientName;
-    private String clientSurname;
     private double price;
     private int idClient;
-    private Date date;
+    private String date;
     private String hall;
     private int place;
 
-    public Ticket() {
+    public Ticket(double price, int idClient, String date, String hall, int place) {
         id++;
-        idTicket = id;
+        this.idTicket = id;
+        this.price = price;
+        this.idClient = idClient;
+        this.date = date;
+        this.hall = hall;
+        this.place = place;
     }
 
-    public String getClientName() {
-        return clientName;
-    }
-
-    public void setClientName(String clientName) {
-        this.clientName = clientName;
-    }
-
-    public String getClientSurname() {
-        return clientSurname;
-    }
-
-    public void setClientSurname(String clientSurname) {
-        this.clientSurname = clientSurname;
+    public Ticket() {
+        //empty constructor
     }
 
     public double getPrice() {
@@ -50,11 +41,11 @@ public class Ticket {
         this.idClient = idClient;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -73,37 +64,4 @@ public class Ticket {
     public void setPlace(int place) {
         this.place = place;
     }
-
-    /*public void updateInfoTicket(){
-
-        Scanner scan = new Scanner(System.in);
-
-        System.out.println("Update name: ");
-        clientName = scan.nextLine();
-
-        System.out.println("Update client surname: ");
-        clientSurname = scan.nextLine();
-
-        System.out.println("Update price: ");
-        price = scan.nextDouble();
-
-        System.out.println("Update client id: ");
-        idClient = scan.nextInt();
-
-        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
-        System.out.println("Update date: ");
-        String tmp = scan.nextLine();
-        try {
-            date = sdf.parse(tmp);
-        }
-        catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        System.out.println("Update hall: ");
-        hall = scan.nextLine();
-
-        System.out.println("Update place: ");
-        place = scan.nextInt();
-    }*/
 }
