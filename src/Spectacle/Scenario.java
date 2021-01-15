@@ -1,4 +1,4 @@
-package Spectacle;
+//package Spectacle;
 
 public class Scenario {
 	private String titleScenario;
@@ -16,4 +16,8 @@ public class Scenario {
 	public String getText() {
 		return textScenario;
 	}
+	
+	public Scenario showAllScenario() {
+        return this;
+    }
 }

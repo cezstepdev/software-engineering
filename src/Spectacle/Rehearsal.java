@@ -1,4 +1,4 @@
-package Spectacle;
+//package Spectacle;
 
 import java.time.LocalDate;
 
@@ -18,4 +18,8 @@ public class Rehearsal {
 		public LocalDate getDate() {
 			return dateRehearsal;
 		}
+		
+		public Rehearsal showAllRehearsal() {
+	        return this;
+	    }
 }
