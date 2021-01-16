@@ -1,4 +1,4 @@
-//package Spectacle;
+package Spectacle;
 
 //import java.util.List;
 //import java.util.Optional;
