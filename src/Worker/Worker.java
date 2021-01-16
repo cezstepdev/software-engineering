@@ -13,7 +13,7 @@ public class Worker {
     private String phone;
     private String salaryWorker;
 
-    public Worker(){
+    public Worker(String name, String surname, String profession, String email, String phone, String salaryWorker){
         id++;
         idWorker = id;
     }

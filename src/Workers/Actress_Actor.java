@@ -4,13 +4,13 @@ import Functions.*;
 import Functions.Props.*;
 import Functions.Sound.*;
 import Spectacle.*;
-import User.SystemList;
+import User.SystemBase;
 
 
 public class Actress_Actor {
     public Scenario CheckScenario(int idScenario) {
-        for(Scenario scenario: SystemList.getScenarioList()) {
-            if(scenario.getId().equals(idScenario)) {
+        for(Scenario scenario: SystemBase.getScenarioList()) {
+            if(scenario.getId() == idScenario) {
                 return scenario;
             }
         }
@@ -18,8 +18,8 @@ public class Actress_Actor {
     }
 
     public Wardrobe CheckWardrobe(int idWardrobe) {
-        for(Wardrobe wardrobe: SystemList.getWardrobeList()) {
-            if(wardrobe.getId().equals(idWardrobe)) {
+        for(Wardrobe wardrobe: SystemBase.getWardrobeList()) {
+            if(wardrobe.getId() == idWardrobe) {
                 return wardrobe;
             }
         }
@@ -27,8 +27,8 @@ public class Actress_Actor {
     }
 
     public Props CheckProps(int idWardrobe) {
-        for(Props props: SystemList.getPropsList()) {
-            if(props.getId().equals(idWardrobe)) {
+        for(Props props: SystemBase.getPropsList()) {
+            if(props.getId() == idWardrobe) {
                 return props;
             }
         }
@@ -36,8 +36,8 @@ public class Actress_Actor {
     }
 
     public Sound CheckSoundInfo(int idSound) {
-        for(Sound sound: SystemList.getSoundList()) {
-            if(sound.getId().equals(idSound)) {
+        for(Sound sound: SystemBase.getSoundList()) {
+            if(sound.getId() == idSound) {
                 return sound;
             }
         }
@@ -45,8 +45,8 @@ public class Actress_Actor {
     }
 
     public Rehearsal CheckRehearsal(int idRehearsal) {
-        for(Rehearsal rehearsal: SystemList.getRehearsalList()) {
-            if(rehearsal.getId().equals(idRehearsal)) {
+        for(Rehearsal rehearsal: SystemBase.getRehearsalList()) {
+            if(rehearsal.getId() == idRehearsal) {
                 return rehearsal;
             }
         }

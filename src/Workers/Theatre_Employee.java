@@ -4,32 +4,35 @@ import Reservation.*;
 import Spectacle.*;
 import User.*;
 
+import java.time.LocalDate;
+
 public class Theatre_Employee {
     public void UpdateSpectacleTimetable(int idSpectacle, String timetable) {
-        for(Spectacle spectacle: SystemList.getSpectacleList()) {
-            if(spectacle != null && spectacle.getId().equals(idSpectacle)) {
-                spectacle.setTimetable(timetable);
+        for (Spectacle spectacle : SystemBase.getSpectacleList()) {
+            if (spectacle.getId() == idSpectacle) {
+                spectacle.updateInfo(timetable);
                 break;
             }
         }
     }
 
     public void ActivateAccount(int idUser) {
-        for(User user: SystemList.getUserList()) {
-            if(user.getId().equals(idUser)) {
-                User user = new User(idUser);
+        for (User user : SystemBase.getUserList()) {
+            if (user.getId() == idUser) {
+                user.setActivated(true);
                 break;
             }
         }
     }
 
-    public void CreateSpectacle(int idSpectacle, String titleSpectacle, String timetableSpectacle, String dateSpectacle) {
+    public void CreateSpectacle(int idSpectacle, String titleSpectacle, String timetableSpectacle, LocalDate dateSpectacle) {
         Spectacle spectacle = new Spectacle(idSpectacle, titleSpectacle, timetableSpectacle, dateSpectacle);
+        SystemBase.addSpectacleList(spectacle);
     }
 
     public void UpdateSpectacle(int idSpectacle, String titleSpectacle, String timetableSpectacle, String dateSpectacle) {
-        for(Spectacle spectacle: SystemList.getSpectacleList()) {
-            if(spectacle.getId().equals(idSpectacle)) {
+        for (Spectacle spectacle : SystemBase.getSpectacleList()) {
+            if (spectacle.getId() == (idSpectacle)) {
                 spectacle.updateInfo(titleSpectacle, timetableSpectacle, dateSpectacle);
                 break;
             }
@@ -37,17 +40,19 @@ public class Theatre_Employee {
     }
 
     public void DeleteSpectacle(int idSpectacle) {
-        for(Spectacle spectacle: SystemList.getSpectacleList()) {
-            if(spectacle.getId().equals(idSpectacle)) {
-                spectacle = null;
+        int index = 0;
+        for (Spectacle spectacle : SystemBase.getSpectacleList()) {
+            index++;
+            if (spectacle.getId() == idSpectacle) {
+                SystemBase.setSpectacleList(index, null);
                 break;
             }
         }
     }
 
     public Client FindClient(int idClient) {
-        for(Client client: SystemList.getClientList()) {
-            if(Client.getId().equals(idClient)) {
+        for (Client client : SystemBase.getClientList()) {
+            if (client.getId() == idClient) {
                 return client;
             }
         }
@@ -55,10 +60,13 @@ public class Theatre_Employee {
     }
 
     public void DeleteReservation(int idTicket) {
-        for(Ticket ticket: SystemList.getTicketList()) {
-            if(ticket.getId().equals(idTicket)) {
-                ticket = null;
+        int index = 0;
+        for (Ticket ticket : SystemBase.getTicketList()) {
+            index++;
+            if (ticket.getId() == idTicket) {
+                SystemBase.setTicketList(index, null);
                 break;
             }
         }
     }
+}

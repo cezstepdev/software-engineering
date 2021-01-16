@@ -12,6 +12,8 @@ public class User {
     private String firstName;
     private String lastName;
 
+    private boolean isActivated = false;
+
     public User(int idUser){
         id++;
         this.idUser = id;
@@ -47,5 +49,9 @@ public class User {
         this.lastName = lastName;
         this.login = login;
         this.password = password;
+    }
+
+    public void setActivated(boolean activated) {
+        isActivated = activated;
     }
 }

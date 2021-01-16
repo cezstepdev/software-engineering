@@ -4,22 +4,20 @@ import Reservation.*;
 import User.*;
 import Worker.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Theatre_Manager{
     public void DeleteWorker(int idWorker){
-        for(Worker worker: SystemList.getWorkerList()) {
-            if(worker.getId() == (idWorker)) {
-                worker = null;
-                break;
+        int index = 0;
+        for(Worker worker : SystemBase.getWorkerList()) {
+            index++;
+            if (worker.getId() == idWorker) {
+                SystemBase.setWorkerList(index, null);
             }
         }
     }
 
-    public Worker FindWorker(int idWorker){
-        for(Worker worker: SystemList.getWorkerList()) {
-            if(worker.getId() == (idWorker)) {
+    public Worker FindWorker(int idWorker) {
+        for (Worker worker : SystemBase.getWorkerList()) {
+            if (worker.getId() == idWorker) {
                 return worker;
             }
         }
@@ -28,13 +26,15 @@ public class Theatre_Manager{
 
     public void AddWorker(String name, String surname, String profession, String email, String phone, String salaryWorker){
         Worker worker = new Worker(name, surname, profession, email, phone, salaryWorker);
+        SystemBase.addWorkerList(worker);
     }
 
     public void DeleteClient(int idClient){
-        for(Client client: SystemList.getClientList()) {
-            if(client.getId() == equals(idClient)) {
-                client = null;
-                break;
+        int index = 0;
+        for(Client client : SystemBase.getClientList()) {
+            index++;
+            if (client.getId() == idWorker) {
+                SystemBase.setClientList(index, null);
             }
         }
     }
