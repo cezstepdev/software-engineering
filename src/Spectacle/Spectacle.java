@@ -13,7 +13,7 @@ public class Spectacle {
 	private LocalDate dateSpectacle;
 	static private List<Spectacle> spectacleList;
 	public Transmission trans;
-	public Integer numSeatsHall = 250;
+	static public Integer numSeatsHall = 250;
 	public String nameHall;
 	
 	public Spectacle(Integer idSpectacle, String titleSpectacle, String timetableSpectacle, LocalDate dateSpectacle) {
