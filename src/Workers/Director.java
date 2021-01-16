@@ -1,45 +1,53 @@
 package Workers;
 
-import java.util.Scanner;
+import Functions.Props.*;
+import Functions.Sound.*;
+import Functions.*;
+import Spectacle.*;
+import User.*;
 
 public class Director {
-    String idScenario;
-    String titleScenario;
-    String clientSurname;
-
-    public void CreateScenario() {
-        Scanner scan = new Scanner(System.in);
-
-        System.out.println("Podaj tytuł scenariusza: ");
-        titleScenario = scan.nextLine();
-
-        System.out.println("Treść scenariusza ");
-        clientSurname = scan.nextLine();
-
-        System.out.println("stworzyłeś nowy scenariusz");
+    public void CreateScenario(String titleScenario, String textScenario) {
+        Scenario scenario = new Scenario(titleScenario, textScenario);
     }
 
-    public void CreateRehearsal() {
-        Scanner scan = new Scanner(System.in);
-
-        System.out.println("Podaj tytuł próby: ");
-        titleScenario = scan.nextLine();
-
-        System.out.println("Data próby ");
-        clientSurname = scan.nextLine();
-
-        System.out.println("stworzyłeś nową próbę");
+    public void CreateRehearsal(String titleRehearsal, String dateRehearsal) {
+        Rehearsal rehearsal = new Rehearsal(titleRehearsal, dateRehearsal);
     }
 
-    public void UpdateWardrobe(int idWardrobe) {
-        System.out.println("zaktualizowałeś garderobę z id: " + idWardrobe + "\n");
+    public void UpdateWardrobe(int idWardrobe, String shirts, String shoes, String pants) {
+        for(Wardrobe wardrobe: SystemList.getWardrobeList()) {
+            if(wardrobe != null && wardrobe.getId().equals(idWardrobe)) {
+                wardrobe.updateInfo(shirts, shoes, pants);
+                break;
+            }
+        }
     }
 
-    public void UpdateScenario(int idScenario) {
-        System.out.println("zaktualizowałeś scenariusz z id: " + idScenario + "\n");
+    public void UpdateScenario(int idScenario, String titleScenario,String textScenario) {
+        for(Scenario scenario: SystemList.getScenarioList()) {
+            if(scenario != null && scenario.getId().equals(idScenario)) {
+                scenario.updateInfo(titleScenario, textScenario);
+                break;
+            }
+        }
     }
 
-    public void UpdateSoundInfo(int idSound) {
-        System.out.println("zaktualizowałeś informacje dla dźwiękowców z id: " + idScenario + "\n");
+    public void UpdateSoundInfo(int idSound, String notes) {
+        for(Sound sound: SystemList.getSoundList()) {
+            if(sound != null && sound.getId().equals(idSound)) {
+                sound.updateInfo(notes);
+                break;
+            }
+        }
+    }
+
+    public void UpdateProps(int idProps, String description) {
+        for(Props props: SystemList.getPropsList()) {
+            if(props != null && props.getId().equals(idProps)) {
+                props.updateInfo(description);
+                break;
+            }
+        }
     }
 }
