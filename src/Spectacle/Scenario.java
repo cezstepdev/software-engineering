@@ -1,4 +1,4 @@
-//package Spectacle;
+package Spectacle;
 
 public class Scenario {
 	private String titleScenario;

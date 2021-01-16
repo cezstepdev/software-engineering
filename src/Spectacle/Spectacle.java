@@ -1,4 +1,4 @@
-//package Spectacle;
+package Spectacle;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -11,7 +11,7 @@ public class Spectacle {
 	private String titleSpectacle;
 	private String timetableSpectacle;
 	private LocalDate dateSpectacle;
-	private List<Spectacle> spectacleList;
+	static private List<Spectacle> spectacleList;
 	public Transmission trans;
 	public Integer numSeatsHall = 250;
 	public String nameHall;
@@ -41,7 +41,7 @@ public class Spectacle {
 		return dateSpectacle;
 	}
 	
-	public Spectacle findSpectacle(String titleSpectacle) {
+	static public Spectacle findSpectacle(String titleSpectacle) {
 		for(Spectacle spectacle: spectacleList) {
 			if(spectacle.getTitle().equals(titleSpectacle)) {
 				return spectacle;
