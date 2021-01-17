@@ -3,6 +3,8 @@ package Reservation;
 import Spectacle.Spectacle;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 
 public class Payment {
@@ -73,7 +75,7 @@ public class Payment {
         if(Spectacle.numSeatsHall > 0) {
             Spectacle.numSeatsHall--;
             paid = true;
-            date = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+            date = "2021-01-01";
             return new Ticket(100, idClient, date, "A", 1 );
         }
         else {

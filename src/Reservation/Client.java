@@ -14,7 +14,7 @@ public class Client {
     private String phone;
     private Ticket ticket;
 
-    public Client(){
+    public Client() {
         id++;
         idClient = id;
         ticket = new Ticket();
@@ -46,6 +46,10 @@ public class Client {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public Ticket getTicket() {
+        return ticket;
     }
 
     public void viewSpectacleTimetable(int idSpectacle, String titleSpectacle, String timetableSpectacle, LocalDate dateSpectacle) {

@@ -64,4 +64,8 @@ public class Ticket {
     public void setPlace(int place) {
         this.place = place;
     }
+
+    public int getIdTicket() {
+        return idTicket;
+    }
 }
