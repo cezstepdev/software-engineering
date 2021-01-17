@@ -1,49 +1,72 @@
 package Workers;
 
-import java.util.Scanner;
+import Reservation.*;
+import Spectacle.*;
+import User.*;
+
+import java.time.LocalDate;
 
 public class Theatre_Employee {
-    String idWardrobe;
-    String nameSpectacle;
-    String spectacleTimetable;
-    String dateSpectacle;
-
-    public void UpdateSpectacleTimetable(int idTimetable) {
-        System.out.println("zaktualizowałeś rozkład spektakli z id:" + idWardrobe + "\n");
+    public void UpdateSpectacleTimetable(int idSpectacle, String timetable) {
+        for (Spectacle spectacle : SystemBase.getSpectacleList()) {
+            if (spectacle.getId() == idSpectacle) {
+                spectacle.updateInfo(timetable);
+                break;
+            }
+        }
     }
 
     public void ActivateAccount(int idUser) {
-        System.out.println("aktywowano konto z id:" + idWardrobe + "\n");
+        for (User user : SystemBase.getUserList()) {
+            if (user.getId() == idUser) {
+                user.setActivated(true);
+                break;
+            }
+        }
     }
 
-    public void CreateSpectacle() {
-        Scanner scan = new Scanner(System.in);
-
-        System.out.println("Podaj tytuł spektaklu: ");
-        nameSpectacle = scan.nextLine();
-
-        System.out.println("Informacja do rozkładu spektakli");
-        spectacleTimetable = scan.nextLine();
-
-        System.out.println("Data spektaklu ");
-        dateSpectacle = scan.nextLine();
-
-        System.out.println("stworzyłeś spektakl z id[...]");
+    public void CreateSpectacle(int idSpectacle, String titleSpectacle, String timetableSpectacle, LocalDate dateSpectacle) {
+        Spectacle spectacle = new Spectacle(idSpectacle, titleSpectacle, timetableSpectacle, dateSpectacle);
+        SystemBase.addSpectacleList(spectacle);
     }
 
-    public void UpdateSpectacle(int idSpectacle) {
-        System.out.println("zaktualizwałeś informacje o spektaklu z id: " + idSpectacle + "\n");
+    public void UpdateSpectacle(int idSpectacle, String titleSpectacle, String timetableSpectacle, String dateSpectacle) {
+        for (Spectacle spectacle : SystemBase.getSpectacleList()) {
+            if (spectacle.getId() == (idSpectacle)) {
+                spectacle.updateInfo(titleSpectacle, timetableSpectacle, dateSpectacle);
+                break;
+            }
+        }
     }
 
     public void DeleteSpectacle(int idSpectacle) {
-        System.out.println("usunąłeś spektakl z id: " + idSpectacle + "\n");
+        int index = 0;
+        for (Spectacle spectacle : SystemBase.getSpectacleList()) {
+            index++;
+            if (spectacle.getId() == idSpectacle) {
+                SystemBase.setSpectacleList(index, null);
+                break;
+            }
+        }
     }
 
-    public void FindClient(int idClient) {
-        System.out.println("znaleziono klienta z id: " + idClient + "\n");
+    public Client FindClient(int idClient) {
+        for (Client client : SystemBase.getClientList()) {
+            if (client.getId() == idClient) {
+                return client;
+            }
+        }
+        return null;
     }
 
-    public void DeleteReservation(int idClient) {
-        System.out.println("usunięto rezerwację klienta z id: " + idClient + "\n");
+    public void DeleteReservation(int idTicket) {
+        int index = 0;
+        for (Ticket ticket : SystemBase.getTicketList()) {
+            index++;
+            if (ticket.getId() == idTicket) {
+                SystemBase.setTicketList(index, null);
+                break;
+            }
+        }
     }
 }

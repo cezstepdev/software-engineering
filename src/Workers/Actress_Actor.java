@@ -1,23 +1,55 @@
 package Workers;
 
+import Functions.*;
+import Functions.Props.*;
+import Functions.Sound.*;
+import Spectacle.*;
+import User.SystemBase;
+
+
 public class Actress_Actor {
-    public void CheckScenario() {
-        System.out.println("scenariusz spektaklu: ");
+    public Scenario CheckScenario(int idScenario) {
+        for(Scenario scenario: SystemBase.getScenarioList()) {
+            if(scenario.getId() == idScenario) {
+                return scenario;
+            }
+        }
+        return null;
     }
 
-    public void CheckWardrobe() {
-        System.out.println("garderoba do spektaklu: ");
+    public Wardrobe CheckWardrobe(int idWardrobe) {
+        for(Wardrobe wardrobe: SystemBase.getWardrobeList()) {
+            if(wardrobe.getId() == idWardrobe) {
+                return wardrobe;
+            }
+        }
+        return null;
     }
 
-    public void CheckProps() {
-        System.out.println("rekwizyty do spektaklu: ");
+    public Props CheckProps(int idWardrobe) {
+        for(Props props: SystemBase.getPropsList()) {
+            if(props.getId() == idWardrobe) {
+                return props;
+            }
+        }
+        return null;
     }
 
-    public void CheckSoundInfo() {
-        System.out.println("informacje dla dźwiękowców do spektaklu: ");
+    public Sound CheckSoundInfo(int idSound) {
+        for(Sound sound: SystemBase.getSoundList()) {
+            if(sound.getId() == idSound) {
+                return sound;
+            }
+        }
+        return null;
     }
 
-    public void CheckRehearsal() {
-        System.out.println("informacje o próbach: ");
+    public Rehearsal CheckRehearsal(int idRehearsal) {
+        for(Rehearsal rehearsal: SystemBase.getRehearsalList()) {
+            if(rehearsal.getId() == idRehearsal) {
+                return rehearsal;
+            }
+        }
+        return null;
     }
 }

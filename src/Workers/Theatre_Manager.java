@@ -1,21 +1,41 @@
 package Workers;
 
-import java.util.Scanner;
+import Reservation.*;
+import User.*;
+import Worker.*;
 
 public class Theatre_Manager{
     public void DeleteWorker(int idWorker){
-        System.out.println("usunięto pracownika z id: "+idWorker+"\n");
+        int index = 0;
+        for(Worker worker : SystemBase.getWorkerList()) {
+            index++;
+            if (worker.getId() == idWorker) {
+                SystemBase.setWorkerList(index, null);
+            }
+        }
     }
 
-    public void FindWorker(int idWorker){
-        System.out.println("znaleziono pracownika z id: "+idWorker+"\n");
+    public Worker FindWorker(int idWorker) {
+        for (Worker worker : SystemBase.getWorkerList()) {
+            if (worker.getId() == idWorker) {
+                return worker;
+            }
+        }
+        return null;
     }
 
-    public void AddWorker(int idWorker){
-        System.out.println("dodałeś pracownika z id: "+idWorker+"\n");
+    public void AddWorker(String name, String surname, String profession, String email, String phone, String salaryWorker){
+        Worker worker = new Worker(name, surname, profession, email, phone, salaryWorker);
+        SystemBase.addWorkerList(worker);
     }
 
     public void DeleteClient(int idClient){
-        System.out.println("usunąłeś klienta z id:"+idClient+"\n");
+        int index = 0;
+        for(Client client : SystemBase.getClientList()) {
+            index++;
+            if (client.getId() == idWorker) {
+                SystemBase.setClientList(index, null);
+            }
+        }
     }
 }
