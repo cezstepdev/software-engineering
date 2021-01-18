@@ -2,6 +2,7 @@ package FunctionTests;
 
 import Functions.Props.AbstractProps;
 import Functions.Props.Chair;
+import Functions.Props.Lightning;
 import Functions.Props.Props;
 import org.junit.jupiter.api.Test;
 
@@ -22,6 +23,11 @@ public class PropsTest {
 
     @Test
     public void LightningTest() {
-
+        int expected = 10;
+        Props props = new Props();
+        Lightning lightning = (Lightning) props.getType("lightning");
+        lightning.setLightningLevel(expected);
+        int actual = lightning.getLightningLevel();
+        assertEquals(expected, actual);
     }
 }

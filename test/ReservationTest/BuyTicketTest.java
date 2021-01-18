@@ -19,11 +19,19 @@ public class BuyTicketTest {
 
     @Test
     public void addToFavouritesTest() {
-        Spectacle spectacle = new Spectacle(1,"test1","testTimeTable", "2021-01-01");
+        new Spectacle(1,"test1","testTimeTable", "2021-01-01");
         Client client = new Client();
         client.addToFavourites("test1");
         List<Spectacle> actual = client.getFavourites();
         Spectacle expected = Spectacle.findSpectacle("test1");
         assertSame(expected, actual.get(0));
+    }
+
+    @Test
+    public void getSpectacleTimeTableTest() {
+        Spectacle spectacle = new Spectacle(1,"test1","testTimeTable", "2021-01-01");
+        Client client = new Client();
+        String actualSpectacle = client.viewSpectacleTimetable(1,"test1","testTimeTable", "2021-01-01");
+        assertSame(spectacle.getTimetableSpectacle(), actualSpectacle);
     }
 }

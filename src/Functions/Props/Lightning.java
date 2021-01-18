@@ -16,7 +16,7 @@ public class Lightning extends AbstractProps {
         return lightningLevel;
     }
 
-    void setLightningLevel(int lightningLevel) {
+    public void setLightningLevel(int lightningLevel) {
         this.lightningLevel = lightningLevel;
     }
 
