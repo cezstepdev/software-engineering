@@ -1,12 +1,12 @@
 package Spectacle;
 
-import java.time.LocalDate;
 
 public class Rehearsal {
+		private Integer idRehearsal;
 		private String titleRehearsal;
-		private LocalDate dateRehearsal;
+		private String dateRehearsal;
 		
-		public Rehearsal(String titleRehearsal,LocalDate dateRehearsal) {
+		public Rehearsal(String titleRehearsal,String dateRehearsal) {
 			this.titleRehearsal = titleRehearsal.trim();
 			this.dateRehearsal = dateRehearsal;
 		}
@@ -15,11 +15,15 @@ public class Rehearsal {
 			return titleRehearsal;
 		}
 		
-		public LocalDate getDate() {
+		public String getDate() {
 			return dateRehearsal;
 		}
 		
 		public Rehearsal showAllRehearsal() {
 	        return this;
 	    }
+
+		public int getId() {
+			return idRehearsal;
+		}
 }

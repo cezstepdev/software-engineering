@@ -1,6 +1,5 @@
 /*
 package Workers;
-
 import Reservation.*;
 import Spectacle.*;
 import User.*;
@@ -26,7 +25,7 @@ public class Theatre_Employee {
         }
     }
 
-    public void CreateSpectacle(int idSpectacle, String titleSpectacle, String timetableSpectacle, LocalDate dateSpectacle) {
+    public void CreateSpectacle(int idSpectacle, String titleSpectacle, String timetableSpectacle, String dateSpectacle) {
         Spectacle spectacle = new Spectacle(idSpectacle, titleSpectacle, timetableSpectacle, dateSpectacle);
         SystemBase.addSpectacleList(spectacle);
     }

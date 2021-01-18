@@ -1,4 +1,5 @@
 /*
+
 package Workers;
 
 import Functions.Props.*;
@@ -16,7 +17,7 @@ public class Director {
         SystemBase.addScenarioList(scenario);
     }
 
-    public void CreateRehearsal(String titleRehearsal, LocalDate dateRehearsal) {
+    public void CreateRehearsal(String titleRehearsal, String dateRehearsal) {
         Rehearsal rehearsal = new Rehearsal(titleRehearsal, dateRehearsal);
         SystemBase.addRehearsalList(rehearsal);
     }

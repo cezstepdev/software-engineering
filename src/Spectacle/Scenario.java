@@ -1,6 +1,7 @@
 package Spectacle;
 
 public class Scenario {
+	private Integer idScenario;
 	private String titleScenario;
 	private String textScenario;
 	
@@ -20,4 +21,13 @@ public class Scenario {
 	public Scenario showAllScenario() {
         return this;
     }
+
+	public int getId() {
+		return idScenario;
+	}
+
+	public void updateInfo(String titleScenario, String textScenario) {
+		this.titleScenario = textScenario;
+		this.textScenario = textScenario;
+	}
 }

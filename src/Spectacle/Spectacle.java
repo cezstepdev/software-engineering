@@ -61,4 +61,14 @@ public class Spectacle {
 		return trans.findById(idSpectacle).orElseThrow(() -> new AttributeNotFoundException("id spectacle: " + idSpectacle));
 	}
 	*/
+
+	public void updateInfo(String timetable) {
+		this.timetableSpectacle = timetable;
+	}
+
+	public void updateInfo(String titleSpectacle, String timetableSpectacle, String dateSpectacle) {
+		this.titleSpectacle = titleSpectacle;
+		this.timetableSpectacle = timetableSpectacle;
+		this.dateSpectacle = dateSpectacle;
+	}
 }
