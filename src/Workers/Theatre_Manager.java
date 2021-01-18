@@ -33,7 +33,7 @@ public class Theatre_Manager{
         int index = 0;
         for(Client client : SystemBase.getClientList()) {
             index++;
-            if (client.getId() == idWorker) {
+            if (client.getId() == idClient) {
                 SystemBase.setClientList(index, null);
             }
         }

@@ -19,4 +19,9 @@ public class PropsTest {
 
         assertEquals("this is a chair", result.getDescription());
     }
+
+    @Test
+    public void LightningTest() {
+
+    }
 }

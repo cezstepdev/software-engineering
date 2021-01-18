@@ -18,7 +18,7 @@ public class Worker {
         idWorker = id;
     }
 
-    public int getId() { return idWorker}
+    public int getId() { return idWorker;}
 
     public String getName() {
         return name;

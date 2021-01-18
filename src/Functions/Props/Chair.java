@@ -1,10 +1,20 @@
 package Functions.Props;
 
 public class Chair extends AbstractProps {
-
+    static int id = 0;
     String description;
     int count;
     String position;
+    int idChair;
+
+    public Chair() {
+        idChair = id;
+        id++;
+    }
+
+    public int getId() {
+        return idChair;
+    }
 
     public String getPosition() {
         return position;

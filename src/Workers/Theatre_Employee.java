@@ -1,3 +1,4 @@
+/*
 package Workers;
 
 import Reservation.*;
@@ -63,10 +64,11 @@ public class Theatre_Employee {
         int index = 0;
         for (Ticket ticket : SystemBase.getTicketList()) {
             index++;
-            if (ticket.getId() == idTicket) {
+            if (ticket.getIdTicket() == idTicket) {
                 SystemBase.setTicketList(index, null);
                 break;
             }
         }
     }
 }
+*/

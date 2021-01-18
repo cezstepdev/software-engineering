@@ -1,6 +1,7 @@
 package Spectacle;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 //import javax.management.AttributeNotFoundException;
 
@@ -10,19 +11,21 @@ public class Spectacle {
 	private Integer idSpectacle;
 	private String titleSpectacle;
 	private String timetableSpectacle;
-	private LocalDate dateSpectacle;
+	private String dateSpectacle;
 	static private List<Spectacle> spectacleList;
 	public Transmission trans;
 	static public Integer numSeatsHall = 250;
 	public String nameHall;
 	
-	public Spectacle(Integer idSpectacle, String titleSpectacle, String timetableSpectacle, LocalDate dateSpectacle) {
+	public Spectacle(Integer idSpectacle, String titleSpectacle, String timetableSpectacle, String dateSpectacle) {
 		id++;
 		idSpectacle = id;
 		this.idSpectacle = idSpectacle;
 		this.titleSpectacle = titleSpectacle;
 		this.timetableSpectacle = timetableSpectacle;
 		this.dateSpectacle = dateSpectacle;
+		spectacleList = new ArrayList<Spectacle>();
+		spectacleList.add(this);
 	}
 	
 	public Integer getId() {
@@ -37,7 +40,7 @@ public class Spectacle {
 		return timetableSpectacle;
 	}
 	
-	public LocalDate getDate() {
+	public String getDate() {
 		return dateSpectacle;
 	}
 	

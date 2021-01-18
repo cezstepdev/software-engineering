@@ -6,8 +6,8 @@ public class Drums extends AbstractSound {
     private int idSound;
     String notes;
 
-    public static int getId() {
-        return id;
+    public int getId() {
+        return idSound;
     }
 
     public Drums() {

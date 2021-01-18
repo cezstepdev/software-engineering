@@ -6,8 +6,12 @@ public class Guitar extends AbstractSound {
     private int idSound;
     String notes;
 
-    public static int getId() {
-        return id;
+    public Guitar() {
+        id++;
+        idSound = id;
+    }
+    public int getId() {
+        return idSound;
     }
 
     String type;
@@ -18,11 +22,6 @@ public class Guitar extends AbstractSound {
 
     public void setType(String type) {
         this.type = type;
-    }
-
-    public Guitar() {
-        id++;
-        idSound = id;
     }
 
     public AbstractSound showInfo() {

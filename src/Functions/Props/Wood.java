@@ -1,11 +1,21 @@
 package Functions.Props;
 
 public class Wood extends AbstractProps {
-
+    static int id = 0;
     String description;
     String position;
     int count;
     String type;
+    int idWood;
+
+    public Wood() {
+        idWood = id;
+        id++;
+    }
+
+    public int getId() {
+        return idWood;
+    }
 
     public String getPosition() {
         return position;

@@ -13,11 +13,13 @@ public class Client {
     private String email;
     private String phone;
     private Ticket ticket;
+    private List<Spectacle> favourites;
 
     public Client() {
         id++;
         idClient = id;
         ticket = new Ticket();
+        favourites = new ArrayList<Spectacle>();
     }
 
     public static int getId() {
@@ -48,17 +50,24 @@ public class Client {
         this.phone = phone;
     }
 
+    public List<Spectacle> getFavourites() {
+        return favourites;
+    }
+
+    public void setFavourites(List<Spectacle> favourites) {
+        this.favourites = favourites;
+    }
+
     public Ticket getTicket() {
         return ticket;
     }
 
-    public void viewSpectacleTimetable(int idSpectacle, String titleSpectacle, String timetableSpectacle, LocalDate dateSpectacle) {
+    public void viewSpectacleTimetable(int idSpectacle, String titleSpectacle, String timetableSpectacle, String dateSpectacle) {
         Spectacle spectacle = new Spectacle(idSpectacle,titleSpectacle, timetableSpectacle, dateSpectacle);
         String timeTable = spectacle.getTimetableSpectacle();
     }
 
     public void addToFavourites(String spectacleTitle) {
-        List<Spectacle> favourites = new ArrayList<Spectacle>();
         favourites.add(Spectacle.findSpectacle(spectacleTitle));
     }
 

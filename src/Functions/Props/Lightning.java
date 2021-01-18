@@ -1,9 +1,16 @@
 package Functions.Props;
 
 public class Lightning extends AbstractProps {
-
+    static int id = 0;
     String description;
     int lightningLevel;
+    int idLightning;
+
+    public Lightning() {
+        idLightning = id;
+        id++;
+    }
+
 
     public int getLightningLevel() {
         return lightningLevel;
