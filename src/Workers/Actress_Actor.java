@@ -1,4 +1,4 @@
-/*
+
 package Workers;
 
 import Functions.*;
@@ -27,7 +27,7 @@ public class Actress_Actor {
         return null;
     }
 
-    public Props CheckProps(int idProps) {
+    /*public Props CheckProps(int idProps) {
         for(Props props: SystemBase.getPropsList()) {
             if(props.getId() == idProps) {
                 return props;
@@ -43,7 +43,7 @@ public class Actress_Actor {
             }
         }
         return null;
-    }
+    }*/
 
     public Rehearsal CheckRehearsal(int idRehearsal) {
         for(Rehearsal rehearsal: SystemBase.getRehearsalList()) {
@@ -54,4 +54,4 @@ public class Actress_Actor {
         return null;
     }
 }
-*/
+

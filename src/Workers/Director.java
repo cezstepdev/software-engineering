@@ -1,4 +1,3 @@
-/*
 
 package Workers;
 
@@ -40,7 +39,7 @@ public class Director {
         }
     }
 
-    public void UpdateSoundInfo(int idSound, String notes) {
+    /*public void UpdateSoundInfo(int idSound, String notes) {
         for(Sound sound: SystemBase.getSoundList()) {
             if(sound.getId() == idSound) {
                 sound.updateInfo(notes);
@@ -56,6 +55,6 @@ public class Director {
                 break;
             }
         }
-    }
+    }*/
 }
-*/
+
