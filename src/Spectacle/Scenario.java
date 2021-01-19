@@ -27,7 +27,7 @@ public class Scenario {
 	}
 
 	public void updateInfo(String titleScenario, String textScenario) {
-		this.titleScenario = textScenario;
+		this.titleScenario = titleScenario;
 		this.textScenario = textScenario;
 	}
 }

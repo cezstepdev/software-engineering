@@ -1,4 +1,4 @@
-package ReservationTest;
+package IntegratedTests;
 
 import Reservation.Client;
 import Spectacle.Spectacle;
