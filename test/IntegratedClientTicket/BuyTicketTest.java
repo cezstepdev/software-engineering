@@ -1,4 +1,4 @@
-package IntegratedTests;
+package IntegratedClientTicket;
 
 import Reservation.Client;
 import Spectacle.Spectacle;
@@ -13,7 +13,6 @@ public class BuyTicketTest {
     public void buyTicketTest() {
         Client client = new Client();
         client.buyTicket(1);
-
         assertSame(1, client.getTicket().getIdTicket());
     }
 
@@ -30,8 +29,10 @@ public class BuyTicketTest {
     @Test
     public void getSpectacleTimeTableTest() {
         Spectacle spectacle = new Spectacle(1,"test1","testTimeTable", "2021-01-01");
+        String expected = spectacle.getTimetableSpectacle();
         Client client = new Client();
-        String actualSpectacle = client.viewSpectacleTimetable(1,"test1","testTimeTable", "2021-01-01");
-        assertSame(spectacle.getTimetableSpectacle(), actualSpectacle);
+        Spectacle searched = Spectacle.findSpectacle("test1");
+        String actualSpectacle = client.viewSpectacleTimetable(searched);
+        assertSame(expected, actualSpectacle);
     }
 }

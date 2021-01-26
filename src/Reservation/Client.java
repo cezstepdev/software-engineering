@@ -62,10 +62,8 @@ public class Client {
         return ticket;
     }
 
-    public String viewSpectacleTimetable(int idSpectacle, String titleSpectacle, String timetableSpectacle, String dateSpectacle) {
-        Spectacle spectacle = new Spectacle(idSpectacle,titleSpectacle, timetableSpectacle, dateSpectacle);
-        String timeTable = spectacle.getTimetableSpectacle();
-        return timeTable;
+    public String viewSpectacleTimetable(Spectacle spectacle) {
+        return spectacle.getTimetableSpectacle();
     }
 
     public void addToFavourites(String spectacleTitle) {

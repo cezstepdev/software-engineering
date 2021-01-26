@@ -15,6 +15,14 @@ public class Drums extends AbstractSound {
         idSound = id;
     }
 
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
     public AbstractSound showInfo() {
         return this;
     }
